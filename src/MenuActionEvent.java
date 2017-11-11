@@ -13,17 +13,20 @@ public class MenuActionEvent extends JFrame {
 
     void createMenu() {
         JMenuBar mb = new JMenuBar(); // 메뉴바 생성
-        JMenu screenMenu = new JMenu("파일"); // Screen 메뉴 생성
-
+        //JMenu screenMenu = new JMenu("파일"); // Screen 메뉴 생성
+        mb.add(new JMenu("파일")); // Edit 메뉴 생성 삽입
         // Screen 메뉴에 메뉴아이템 생성 삽입
-        screenMenu.add(new JMenuItem("확면확대"));
-        screenMenu.addSeparator(); // 분리선 삽입
-        screenMenu.add(new JMenuItem("쪽윤곽"));
+
 
         // 메뉴바에 메뉴 삽입
-        mb.add(screenMenu); // Screen 메뉴 삽입
+
         mb.add(new JMenu("편집")); // Edit 메뉴 생성 삽입
-        mb.add(new JMenu("보기")); // Source 메뉴 생성 삽입
+        //mb.add(new JMenu("보기")); // Source 메뉴 생성 삽입
+        JMenu viewer = new JMenu("보기"); // Screen 메뉴 생성
+        viewer.add(new JMenuItem("확면확대"));
+        viewer.addSeparator(); // 분리선 삽입
+        viewer.add(new JMenuItem("쪽윤곽"));
+        mb.add(viewer); // Screen 메뉴 삽입
         mb.add(new JMenu("입력")); // Project 메뉴 생성 삽입
         //mb.add(new JMenu("Run")); // Run 메뉴 생성 삽입
 
