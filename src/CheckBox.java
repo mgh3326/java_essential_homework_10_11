@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.*;//10장 4번 문제
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -8,7 +8,7 @@ public class CheckBox extends JFrame {
     String [] names = {"버튼 비활성화", "버튼 감추기"}; // 체크박스 문자열로 사용할 문자열 배열
     JButton btn = new JButton("test button");
     CheckBox() {
-        setTitle("체크박스 만들기  예제");
+        setTitle("CheckBox와 Item Event");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Container c = getContentPane();
         c.setLayout(new FlowLayout());
@@ -32,7 +32,7 @@ public class CheckBox extends JFrame {
 //        c.add(button_hide);
         c.add(btn);
 //        btn.setEnabled(false);
-        setSize(250,150);
+        setSize(250,200);
         setVisible(true);
     }
     // Item 리스너 구현
@@ -60,7 +60,7 @@ public class CheckBox extends JFrame {
         new CheckBox();
     }
 }
-
-
+//https://m.blog.naver.com/PostView.nhn?blogId=woncaesar&logNo=70142173324&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+//
 
 
