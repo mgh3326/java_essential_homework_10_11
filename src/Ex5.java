@@ -15,7 +15,7 @@ public class Ex5 extends JFrame {
     int width = appleIco.getIconWidth();
     int height = appleIco.getIconHeight();
     Ex5 () {
-        setTitle("Ex5");
+        setTitle("그래픽 이미지 10% 확대 축소");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 400);
         contentPane = getContentPane();

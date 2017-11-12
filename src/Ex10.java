@@ -18,7 +18,7 @@ public class Ex10 extends JFrame {
     boolean [] clickState = new boolean[10];
 
     Ex10 () {
-        setTitle("Ex10");
+        setTitle("Ten 레이블 클릭");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

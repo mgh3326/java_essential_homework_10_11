@@ -9,15 +9,9 @@ public class CheckBox extends JFrame {
     JButton btn = new JButton("test button");
     CheckBox() {
         setTitle("CheckBox와 Item Event");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//View 종료시에 프로그램도 종료되도록 합니다.
         Container c = getContentPane();
         c.setLayout(new FlowLayout());
-
-        // 3 개의 체크박스를 생성한다.
-//        JCheckBox button_unvisialbe = new JCheckBox("버튼 비활성화");
-//        JCheckBox button_hide = new JCheckBox("버튼 감추기");
-
-
 
         MyItemListener listener = new MyItemListener();
         for(int i=0; i<button.length; i++) {
@@ -27,40 +21,31 @@ public class CheckBox extends JFrame {
             button[i].addItemListener(listener); // 체크박스에 Item 리스너 등록
         }
 
-        // 컨텐트팬에 3개의 체크박스 삽입
-//        c.add(button_unvisialbe);
-//        c.add(button_hide);
-        c.add(btn);
-//        btn.setEnabled(false);
+        c.add(btn);//컨텐트팬에 버튼 삽입
         setSize(250,200);
         setVisible(true);
     }
     // Item 리스너 구현
     class MyItemListener implements ItemListener {
-//        int sum = 0; // 가격의 합
-
         // 체크박스의 선택 상태가 변하면 itemStateChanged()가 호출됨
         public void itemStateChanged(ItemEvent e) {
             if(e.getStateChange() == ItemEvent.SELECTED) { // 체크박스가 선택된 경우
-                if(e.getItem() == button[0]) // 사과 체크박스
+                if(e.getItem() == button[0]) // 0번째 즉 버튼 비활성화 체크시 버튼이 비활성화 됩니다.
                     btn.setEnabled(false);
-                else if(e.getItem() == button[1]) // 배 체크박스
+                else if(e.getItem() == button[1]) // 1번째 즉 버튼 감추기 체크시 버튼이 감추기 됩니다.
                     btn.setVisible(false);
             }
             else { // 체크박스가 해제된 경우
-                if(e.getItem() == button[0]) // 사과 체크박스
+                if(e.getItem() == button[0])  // 0번째 즉 버튼 비활성화 체크가 해지 된 경우 활성화 됩니다.
                     btn.setEnabled(true);
-                else if(e.getItem() == button[1]) // 배 체크박스
+                else if(e.getItem() == button[1]) // 1번째 즉 버튼 감추기 체크가 해지 된 경우 버튼이 보이게 됩니다.
                     btn.setVisible(true);
             }
-            //sumLabel.setText("현재 "+sum+"원 입니다."); // 합 출력
         }
     }
     public static void main(String [] args) {
         new CheckBox();
     }
 }
-//https://m.blog.naver.com/PostView.nhn?blogId=woncaesar&logNo=70142173324&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
-//
 
 
